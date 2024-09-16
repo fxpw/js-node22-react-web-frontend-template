@@ -1,0 +1,14 @@
+services:
+  js-react-web-frontend-template:
+    container_name: js-react-web-frontend-template
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/usr/src/app/src
+      - ./public:/usr/src/app/public
+      - ./.env:/usr/src/app/.env
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=${NODE_ENV}
